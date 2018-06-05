@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-// add in the router import
+// add in the router import, gives access to router parameters
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-about',
@@ -9,9 +11,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+// Create an instance of activated route
+  constructor(private route: ActivatedRoute, private router: Router) { 
+
+  	console.log(this.route.params);
+  	this.route.params.subscribe(res=>console.log(res.id));
+
+  }
 
   ngOnInit() {
   }
 
+
+  sendMeHome(){
+  	this.router.navigate(['']);
+  }
 }
