@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// add in the router import
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-about',
