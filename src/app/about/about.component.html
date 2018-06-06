@@ -1,3 +1,9 @@
-<p>
-  <a href = "" (click)="sendMeHome()">Route to home</a>
+<p id="about">
+	<a href = "" (click)="sendMeHome()">Route to home</a>
 </p>
+
+<ul>
+	<li *ngFor="let goal of goals">
+		{{goal}}
+	</li>
+</ul>
